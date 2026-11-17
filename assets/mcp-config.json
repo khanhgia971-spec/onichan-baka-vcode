@@ -1,0 +1,72 @@
+{
+  "mcpServers": {
+    "open-websearch": {
+      "command": "npx",
+      "args": ["-y", "open-websearch@latest"],
+      "env": {
+        "DEFAULT_SEARCH_ENGINE": "duckduckgo",
+        "ENABLE_PLAYWRIGHT_FALLBACK": "true"
+      }
+    },
+    "duckduckgo": {
+      "command": "uvx",
+      "args": ["duckduckgo-mcp-server"]
+    },
+    "fetch": {
+      "command": "uvx",
+      "args": ["mcp-server-fetch"]
+    },
+    "jina": {
+      "command": "npx",
+      "args": ["-y", "jina-mcp-tools"]
+    },
+    "crawl4ai": {
+      "command": "uvx",
+      "args": ["crawl4ai-mcp"]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"]
+    },
+    "blender": {
+      "command": "uvx",
+      "args": ["--python", "3.11", "mcp-for-blender"],
+      "env": {
+        "BLENDER_HOST": "localhost",
+        "BLENDER_PORT": "9876",
+        "UV_PYTHON_PREFERENCE": "only-managed",
+        "DISABLE_TELEMETRY": "true"
+      }
+    },
+    "rea": {
+      "command": "npx",
+      "args": ["-y", "rea-agents@latest", "mcp"],
+      "env": {
+        "REA_MCP_OUTPUT_SCHEMA_PROFILE": "compact"
+      }
+    }
+  },
+  "_optional_api_key_servers": {
+    "tavily": {
+      "command": "npx",
+      "args": ["-y", "tavily-mcp@latest"],
+      "env": {
+        "TAVILY_API_KEY": "YOUR_TAVILY_API_KEY"
+      }
+    },
+    "firecrawl": {
+      "command": "npx",
+      "args": ["-y", "firecrawl-mcp"],
+      "env": {
+        "FIRECRAWL_API_KEY": "YOUR_FIRECRAWL_API_KEY"
+      }
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "YOUR_BRAVE_API_KEY"
+      }
+    }
+  }
+}

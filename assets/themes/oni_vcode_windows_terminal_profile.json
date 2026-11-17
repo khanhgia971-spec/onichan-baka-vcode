@@ -1,0 +1,16 @@
+{
+  "name": "Onichan-Baka-vcode (Oni-VCode Anime Mode)",
+  "font": {
+    "face": "Anime Script",
+    "size": 13
+  },
+  "backgroundImage": "/working_dir/c_2777cf7d1f577b18/skills/onichan-baka-vcode/assets/wallpapers/theme_1_cliff_swordsman.jpg",
+  "backgroundImageAlt": "/working_dir/c_2777cf7d1f577b18/skills/onichan-baka-vcode/assets/wallpapers/theme_2_moonlight_dualblade.jpg",
+  "backgroundImageOpacity": 0.28,
+  "backgroundImageStretchMode": "uniformToFill",
+  "useAcrylic": true,
+  "opacity": 85,
+  "cursorShape": "filledBox",
+  "cursorColor": "#00F2FE",
+  "colorScheme": "Oni-VCode-Moonlight"
+}

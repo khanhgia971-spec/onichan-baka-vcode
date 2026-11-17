@@ -1,0 +1,72 @@
+/* ==========================================================================
+   Onichan-Baka-vcode (Oni-VCode) Supreme Animated Anime UI Theme
+   Targets: Claude Desktop, ChatGPT/Codex Desktop, Cursor, Windsurf, VS Code
+   Font: Anime Script (https://befonts.com/anime-script-font.html)
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Anime Script';
+  src: local('Anime Script'), local('Anime-BF64c3cadb515c9');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --oni-bg-1: url('/working_dir/c_2777cf7d1f577b18/skills/onichan-baka-vcode/assets/wallpapers/theme_1_cliff_swordsman.jpg');
+  --oni-bg-2: url('/working_dir/c_2777cf7d1f577b18/skills/onichan-baka-vcode/assets/wallpapers/theme_2_moonlight_dualblade.jpg');
+  --oni-anime-font: 'Anime Script', 'Segoe Script', 'Comic Sans MS', cursive;
+  --oni-code-font: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  --oni-neon-cyan: #00f2fe;
+  --oni-neon-Sakura: #ff758c;
+  --oni-glass-bg: rgba(10, 14, 26, 0.72);
+  --oni-glass-border: rgba(0, 242, 254, 0.28);
+}
+
+@keyframes oniWallpaperCycle {
+  0%, 45% {
+    background-image: linear-gradient(135deg, rgba(8, 12, 24, 0.70), rgba(18, 10, 32, 0.78)), var(--oni-bg-1);
+    transform: scale(1.0);
+  }
+  50%, 95% {
+    background-image: linear-gradient(135deg, rgba(14, 8, 28, 0.72), rgba(6, 18, 34, 0.78)), var(--oni-bg-2);
+    transform: scale(1.04);
+  }
+  100% {
+    background-image: linear-gradient(135deg, rgba(8, 12, 24, 0.70), rgba(18, 10, 32, 0.78)), var(--oni-bg-1);
+    transform: scale(1.0);
+  }
+}
+
+@keyframes oniNeonPulse {
+  0%, 100% { box-shadow: 0 0 15px rgba(0, 242, 254, 0.25), inset 0 0 12px rgba(255, 117, 140, 0.15); }
+  50% { box-shadow: 0 0 28px rgba(255, 117, 140, 0.45), inset 0 0 18px rgba(0, 242, 254, 0.25); }
+}
+
+body::before,
+.monaco-workbench::before,
+main::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  animation: oniWallpaperCycle 24s ease-in-out infinite;
+  filter: saturate(1.15) contrast(1.05);
+  pointer-events: none;
+}
+
+h1, h2, h3, .title, .window-title, .chat-header, .sidebar-header {
+  font-family: var(--oni-anime-font) !important;
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 10px rgba(0, 242, 254, 0.45);
+}
+
+.chat-container, .monaco-editor, .sidebar, .panel, aside, nav {
+  background: var(--oni-glass-bg) !important;
+  backdrop-filter: blur(16px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(140%) !important;
+  border: 1px solid var(--oni-glass-border) !important;
+  animation: oniNeonPulse 6s infinite ease-in-out;
+}
